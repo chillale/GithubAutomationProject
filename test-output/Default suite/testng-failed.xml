@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="withTestng.Samplecollection">
+      <class name="withTestng.DoctorEmpTest">
         <methods>
-          <include name="sampleCollection"/>
+          <include name="doctorEmp"/>
         </methods>
-      </class> <!-- withTestng.Samplecollection -->
+      </class> <!-- withTestng.DoctorEmpTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

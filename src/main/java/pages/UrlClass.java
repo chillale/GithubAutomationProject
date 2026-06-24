@@ -17,12 +17,15 @@ public class UrlClass {
 
 	public WebDriver url() {
 		ChromeOptions options = new ChromeOptions();
-
+        options.addArguments("--disable-save-password-bubble");
 		Map<String, Object> prefs = new HashMap<>();
 		prefs.put("profile.default_content_setting_values.media_stream_camera", 1);
 		prefs.put("profile.default_content_setting_values.media_stream_mic", 1);
 		prefs.put("profile.default_content_setting_values.geolocation", 1);
 		prefs.put("profile.default_content_setting_values.notifications", 1);
+		prefs.put("credentials_enable_service", false);
+		prefs.put("profile.password_manager_enabled", false);
+		prefs.put("profile.password_manager_leak_detection", false);
 		options.setExperimentalOption("prefs", prefs);
 
 		options.addArguments("--use-fake-ui-for-media-stream");
@@ -34,7 +37,7 @@ public class UrlClass {
 
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver(options);
-		driver.get("https://tayades.softmed.in/uat_billing");
+		driver.get("http://10.2.14.102/his/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		return driver;
